@@ -1,0 +1,156 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.nav-tabs {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding: 0; /* Remove default padding */
+}
+
+.nav-tabs .nav-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    background-color: #800000; /* Maroon background */
+    margin-right: 10px; /* Space between tabs */
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #600000; /* Darker maroon for hover effect */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #a52a2a; /* Lighter maroon for active tab */
+    color: #ffffff;
+    border-color: #a52a2a;
+    border-bottom: 2px solid #ffffff;
+}
+
+.tab-content {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #800000; /* Maroon color for buttons */
+    border-color: #800000;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #600000; /* Darker maroon for hover */
+    border-color: #600000;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.sticky-table {
+    overflow-y: auto;
+    height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    margin-top: 1rem;
+}
+
+table {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+table thead th {
+    background-color: #800000; /* Maroon for table header */
+    color: #ffffff;
+    text-align: center;
+    border: none;
+    padding: 0.75rem;
+}
+
+table tbody td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e2e2e2;
+}
+
+@media (max-width: 768px) {
+    .nav-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        overflow-x: visible; /* Allow normal overflow handling */
+    }
+
+    .nav-tabs .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem;
+        margin-right: 0; /* Remove right margin on small screens */
+    }
+
+    .btn-primary, .btn-danger {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+}

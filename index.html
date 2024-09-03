@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Custom styles for the footer */
+        footer {
+            background-color: #343a40;
+            /* Dark background color */
+            color: #ffffff;
+            /* White text color */
+        }
+
+        footer h5 {
+            border-bottom: 2px solid #ffc107;
+            /* Accent line under headings */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            text-decoration: none;
+            /* Remove underline from links */
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            /* Add underline on hover */
+        }
+
+        footer .bi {
+            font-size: 20px;
+            /* Icon size */
+            vertical-align: middle;
+            /* Align icons with text */
+        }
+    </style>
+
+    <title>Company Management System</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <h4>Company Management System</h4>
+            </a>
+
+            <!-- Toggle button for mobile view -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+
+                <!-- Buttons -->
+                <div class="d-flex">
+                    <a class="btn btn-danger me-2" href="register.html">Register</a>
+                    <a class="btn btn-danger" href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container my-4">
+        <h1 class="text-center">Company Management System</h1>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs my-4" id="managementTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="add-emp-tab" data-bs-toggle="tab" href="#addEmp" role="tab">Add
+                    Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="update-emp-tab" data-bs-toggle="tab" href="#updateEmp" role="tab">Update
+                    Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delete-emp-tab" data-bs-toggle="tab" href="#deleteEmp" role="tab">Delete
+                    Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="show-emp-tab" data-bs-toggle="tab" href="#showEmp" role="tab">Employee List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="add-manager-tab" data-bs-toggle="tab" href="#addManager" role="tab">Add
+                    Manager</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="update-manager-tab" data-bs-toggle="tab" href="#updateManager" role="tab">Update
+                    Manager</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delete-manager-tab" data-bs-toggle="tab" href="#deleteManager" role="tab">Delete
+                    Manager</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="show-manager-tab" data-bs-toggle="tab" href="#showManager" role="tab">Manager
+                    List</a>
+            </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content" id="managementTabContent">
+            <!-- Add Employee Form -->
+            <div class="tab-pane fade show active" id="addEmp" role="tabpanel">
+                <form id="addEmployeeForm">
+                    <div class="mb-3">
+                        <label for="empName" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" id="empName" placeholder="Enter employee name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="empEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="empEmail" placeholder="Enter email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="empPosition" class="form-label">Position</label>
+                        <input type="text" class="form-control" id="empPosition" placeholder="Enter position">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Employee</button>
+                </form>
+            </div>
+
+            <!-- Update Employee Form -->
+            <div class="tab-pane fade" id="updateEmp" role="tabpanel">
+                <form id="updateEmployeeForm">
+                    <div class="mb-3">
+                        <label for="updateEmpId" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" id="updateEmpId" placeholder="Enter employee ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateEmpName" class="form-label">New Employee Name</label>
+                        <input type="text" class="form-control" id="updateEmpName"
+                            placeholder="Enter new employee name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateEmpEmail" class="form-label">New Email address</label>
+                        <input type="email" class="form-control" id="updateEmpEmail" placeholder="Enter new email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateEmpPosition" class="form-label">New Position</label>
+                        <input type="text" class="form-control" id="updateEmpPosition" placeholder="Enter new position">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Employee</button>
+                </form>
+            </div>
+
+            <!-- Delete Employee Form -->
+            <div class="tab-pane fade" id="deleteEmp" role="tabpanel">
+                <form id="deleteEmployeeForm">
+                    <div class="mb-3">
+                        <label for="deleteEmpId" class="form-label">Employee ID</label>
+                        <input type="text" class="form-control" id="deleteEmpId" placeholder="Enter employee ID">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Delete Employee</button>
+                </form>
+            </div>
+
+            <!-- Show All Employees -->
+            <div class="tab-pane fade" id="showEmp" role="tabpanel">
+                <div id="employeeList" class="sticky-table mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Position</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Employee list will be populated here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Add Manager Form -->
+            <div class="tab-pane fade" id="addManager" role="tabpanel">
+                <form id="addManagerForm">
+                    <div class="mb-3">
+                        <label for="managerName" class="form-label">Manager Name</label>
+                        <input type="text" class="form-control" id="managerName" placeholder="Enter manager name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="managerEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="managerEmail" placeholder="Enter email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="managerDepartment" class="form-label">Department</label>
+                        <input type="text" class="form-control" id="managerDepartment" placeholder="Enter department">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Manager</button>
+                </form>
+            </div>
+
+            <!-- Update Manager Form -->
+            <div class="tab-pane fade" id="updateManager" role="tabpanel">
+                <form id="updateManagerForm">
+                    <div class="mb-3">
+                        <label for="updateManagerId" class="form-label">Manager ID</label>
+                        <input type="text" class="form-control" id="updateManagerId" placeholder="Enter manager ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateManagerName" class="form-label">New Manager Name</label>
+                        <input type="text" class="form-control" id="updateManagerName"
+                            placeholder="Enter new manager name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateManagerEmail" class="form-label">New Email address</label>
+                        <input type="email" class="form-control" id="updateManagerEmail" placeholder="Enter new email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateManagerDepartment" class="form-label">New Department</label>
+                        <input type="text" class="form-control" id="updateManagerDepartment"
+                            placeholder="Enter new department">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Manager</button>
+                </form>
+            </div>
+
+            <!-- Delete Manager Form -->
+            <div class="tab-pane fade" id="deleteManager" role="tabpanel">
+                <form id="deleteManagerForm">
+                    <div class="mb-3">
+                        <label for="deleteManagerId" class="form-label">Manager ID</label>
+                        <input type="text" class="form-control" id="deleteManagerId" placeholder="Enter manager ID">
+                    </div>
+                    <button type="submit" class="btn btn-danger">Delete Manager</button>
+                </form>
+            </div>
+
+            <!-- Show All Managers -->
+            <div class="tab-pane fade" id="showManager" role="tabpanel">
+                <div id="managerList" class="sticky-table mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Manager list will be populated here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-md-4 mb-3">
+                    <h5>Contact Us</h5>
+                    <p>
+                        <strong>Email:</strong> support@company.com<br>
+                        <strong>Phone:</strong> +1 (123) 456-7890<br>
+                        <strong>Address:</strong> 123 Business Rd, Suite 456, City, Country
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">About Us</a></li>
+                        <li><a href="#" class="text-white">Services</a></li>
+                        <li><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i> Facebook</a><br>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i> Twitter</a><br>
+                    <a href="#" class="text-white me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024 Company Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
